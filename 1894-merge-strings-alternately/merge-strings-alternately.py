@@ -5,15 +5,10 @@ class Solution(object):
         :type word2: str
         :rtype: str
         """
-        n1,n2=len(word1),len(word2)
-        n=min(n1,n2)
-        word=list()
-        for i in range(n):
-            word.append(word1[i])
-            word.append(word2[i])
-        word.append(word1[n:])
-        word.append(word2[n:])
-        word="".join(word)
+        word=''
+        for i in range(min(len(word1),len(word2))):
+            word+=word1[i]+word2[i]
+        word+=word1[i+1:]+word2[i+1:]
         return word
 
         
